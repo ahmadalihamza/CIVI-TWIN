@@ -1,0 +1,106 @@
+{
+  "communities": [
+    {
+      "demand_visits_per_week": 60,
+      "id": "A",
+      "label": "A",
+      "node_id": "nA",
+      "population": null,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 40,
+      "id": "B",
+      "label": "B",
+      "node_id": "nB",
+      "population": null,
+      "zone_class": "rural"
+    }
+  ],
+  "edges": [
+    {
+      "direction": "two_way",
+      "from_node": "nA",
+      "minutes": 10.0,
+      "to_node": "nE"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "nB",
+      "minutes": 50.0,
+      "to_node": "nE"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "nA",
+      "minutes": 40.0,
+      "to_node": "nN"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "nB",
+      "minutes": 10.0,
+      "to_node": "nN"
+    }
+  ],
+  "manifest": {
+    "assumptions": [],
+    "district_label": "Golden fixture",
+    "generator": null,
+    "id": "fixture-golden-v1",
+    "is_synthetic": true,
+    "license": "CC0-1.0",
+    "model_scope": "Mathematical test fixture (SRS §11.1).",
+    "sha256": "46a58443b2b82b79f63d14a11062ef8ccac4ac9efc2bf507b2e53ab80742f346",
+    "source_date": "2026-11-20",
+    "source_url": null,
+    "version": "1"
+  },
+  "nodes": [
+    {
+      "display_x": 0.0,
+      "display_y": 0.0,
+      "id": "nA",
+      "label": "A"
+    },
+    {
+      "display_x": 10.0,
+      "display_y": 0.0,
+      "id": "nB",
+      "label": "B"
+    },
+    {
+      "display_x": 0.0,
+      "display_y": 10.0,
+      "id": "nE",
+      "label": "E"
+    },
+    {
+      "display_x": 10.0,
+      "display_y": 10.0,
+      "id": "nN",
+      "label": "N"
+    }
+  ],
+  "provenance": [],
+  "sites": [
+    {
+      "capacity_per_week": 60,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E",
+      "label": "E",
+      "node_id": "nE",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 40,
+      "eligible": true,
+      "fixed_cost_pkr": 100,
+      "id": "N",
+      "label": "N",
+      "node_id": "nN",
+      "type": "candidate"
+    }
+  ]
+}

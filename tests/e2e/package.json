@@ -1,0 +1,10 @@
+{
+  "name": "civitwin-browser-tests",
+  "private": true,
+  "scripts": {
+    "test": "node browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}

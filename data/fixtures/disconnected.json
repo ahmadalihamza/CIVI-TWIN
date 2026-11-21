@@ -1,0 +1,116 @@
+{
+  "communities": [
+    {
+      "demand_visits_per_week": 50,
+      "id": "D01",
+      "label": "D01",
+      "node_id": "v1",
+      "population": null,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 40,
+      "id": "D02",
+      "label": "D02",
+      "node_id": "v2",
+      "population": null,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 30,
+      "id": "D03",
+      "label": "D03 (no road)",
+      "node_id": "v3",
+      "population": null,
+      "zone_class": "remote"
+    }
+  ],
+  "edges": [
+    {
+      "direction": "two_way",
+      "from_node": "v1",
+      "minutes": 10.0,
+      "to_node": "ve"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "v2",
+      "minutes": 35.0,
+      "to_node": "ve"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "v2",
+      "minutes": 12.0,
+      "to_node": "vn"
+    }
+  ],
+  "manifest": {
+    "assumptions": [
+      "Cluster D03 has no road connection."
+    ],
+    "district_label": "Test fixture (disconnected)",
+    "generator": null,
+    "id": "fixture-disconnected-v1",
+    "is_synthetic": true,
+    "license": "CC0-1.0",
+    "model_scope": "Test fixture only.",
+    "sha256": "2677ce5e6563cab8c98865404a083cb9f6cebc4599f86d53d2837c1548d7187d",
+    "source_date": "2026-11-20",
+    "source_url": null,
+    "version": "1"
+  },
+  "nodes": [
+    {
+      "display_x": 10.0,
+      "display_y": 10.0,
+      "id": "v1",
+      "label": "v1"
+    },
+    {
+      "display_x": 30.0,
+      "display_y": 10.0,
+      "id": "v2",
+      "label": "v2"
+    },
+    {
+      "display_x": 90.0,
+      "display_y": 70.0,
+      "id": "v3",
+      "label": "v3"
+    },
+    {
+      "display_x": 20.0,
+      "display_y": 20.0,
+      "id": "ve",
+      "label": "ve"
+    },
+    {
+      "display_x": 40.0,
+      "display_y": 20.0,
+      "id": "vn",
+      "label": "vn"
+    }
+  ],
+  "provenance": [],
+  "sites": [
+    {
+      "capacity_per_week": 200,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "DE1",
+      "label": "DE1",
+      "node_id": "ve",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 100,
+      "eligible": true,
+      "fixed_cost_pkr": 100000,
+      "id": "DN1",
+      "label": "DN1",
+      "node_id": "vn",
+      "type": "candidate"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+name: Test and publish GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: requirements.lock.txt
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: tests/e2e/package-lock.json
+      - name: Install locked dependencies
+        run: |
+          python -m pip install -r requirements.lock.txt
+          python -m pip install --no-deps -e .
+      - name: Check Python and JavaScript
+        run: |
+          python -m compileall -q services/api scripts
+          for file in apps/web/*.js; do node --check "$file" || exit; done
+      - name: Run engine and API tests
+        run: python -m pytest -q
+      - name: Generate audited synthetic demo
+        run: python scripts/build_pages.py dist/pages
+      - name: Test local and static browser workflows
+        run: |
+          npm ci --prefix tests/e2e
+          (cd tests/e2e && npx playwright install --with-deps chromium)
+          CIVITWIN_DB="$RUNNER_TEMP/civitwin.db" python -m civitwin_api &
+          api_pid=$!
+          python -m http.server 8002 --bind 127.0.0.1 --directory dist &
+          static_pid=$!
+          trap 'kill "$api_pid" "$static_pid"' EXIT
+          curl -fsS --retry 15 --retry-connrefused http://127.0.0.1:8000/api/v1/ready
+          curl -fsS --retry 15 --retry-connrefused -o /dev/null http://127.0.0.1:8002/pages/
+          node tests/e2e/browser.cjs local http://127.0.0.1:8000/
+          node tests/e2e/browser.cjs pages http://127.0.0.1:8002/pages/
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: dist/pages
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

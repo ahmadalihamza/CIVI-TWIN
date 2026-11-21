@@ -1,0 +1,16 @@
+# Versions verified on the reference machine (Python 3.14.10, 2026-11-20).
+# Install: pip install -r requirements.lock.txt && pip install --no-deps -e .
+fastapi==0.143.3
+starlette==1.9.0
+uvicorn==0.53.0
+pydantic==2.14.1
+networkx==3.4.2
+numpy==2.4.6
+scipy==1.17.1
+ortools==9.15.6755
+absl-py==2.5.1
+immutabledict==4.3.1
+protobuf==6.33.6
+# dev / tests
+pytest==9.1.1
+httpx==0.28.1

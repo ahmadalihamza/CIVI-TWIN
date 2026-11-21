@@ -1,0 +1,1058 @@
+{
+  "communities": [
+    {
+      "demand_visits_per_week": 31,
+      "id": "C01",
+      "label": "Cluster C01 (synthetic)",
+      "node_id": "V-C01",
+      "population": 3400,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 42,
+      "id": "C02",
+      "label": "Cluster C02 (synthetic)",
+      "node_id": "V-C02",
+      "population": 8000,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 32,
+      "id": "C03",
+      "label": "Cluster C03 (synthetic)",
+      "node_id": "V-C03",
+      "population": 9900,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 45,
+      "id": "C04",
+      "label": "Cluster C04 (synthetic)",
+      "node_id": "V-C04",
+      "population": 4400,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 101,
+      "id": "C05",
+      "label": "Cluster C05 (synthetic)",
+      "node_id": "V-C05",
+      "population": 10900,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 70,
+      "id": "C06",
+      "label": "Cluster C06 (synthetic)",
+      "node_id": "V-C06",
+      "population": 13600,
+      "zone_class": "remote"
+    },
+    {
+      "demand_visits_per_week": 107,
+      "id": "C07",
+      "label": "Cluster C07 (synthetic)",
+      "node_id": "V-C07",
+      "population": 2900,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 81,
+      "id": "C08",
+      "label": "Cluster C08 (synthetic)",
+      "node_id": "V-C08",
+      "population": 10000,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 107,
+      "id": "C09",
+      "label": "Cluster C09 (synthetic)",
+      "node_id": "V-C09",
+      "population": 7500,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 106,
+      "id": "C10",
+      "label": "Cluster C10 (synthetic)",
+      "node_id": "V-C10",
+      "population": 13800,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 84,
+      "id": "C11",
+      "label": "Cluster C11 (synthetic)",
+      "node_id": "V-C11",
+      "population": 5000,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 77,
+      "id": "C12",
+      "label": "Cluster C12 (synthetic)",
+      "node_id": "V-C12",
+      "population": 14800,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 62,
+      "id": "C13",
+      "label": "Cluster C13 (synthetic)",
+      "node_id": "V-C13",
+      "population": 11900,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 67,
+      "id": "C14",
+      "label": "Cluster C14 (synthetic)",
+      "node_id": "V-C14",
+      "population": 11100,
+      "zone_class": "remote"
+    },
+    {
+      "demand_visits_per_week": 37,
+      "id": "C15",
+      "label": "Cluster C15 (synthetic)",
+      "node_id": "V-C15",
+      "population": 13100,
+      "zone_class": "remote"
+    },
+    {
+      "demand_visits_per_week": 33,
+      "id": "C16",
+      "label": "Cluster C16 (synthetic)",
+      "node_id": "V-C16",
+      "population": 9200,
+      "zone_class": "remote"
+    },
+    {
+      "demand_visits_per_week": 72,
+      "id": "C17",
+      "label": "Cluster C17 (synthetic)",
+      "node_id": "V-C17",
+      "population": 9400,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 45,
+      "id": "C18",
+      "label": "Cluster C18 (synthetic)",
+      "node_id": "V-C18",
+      "population": 9600,
+      "zone_class": "remote"
+    },
+    {
+      "demand_visits_per_week": 83,
+      "id": "C19",
+      "label": "Cluster C19 (synthetic)",
+      "node_id": "V-C19",
+      "population": 10100,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 104,
+      "id": "C20",
+      "label": "Cluster C20 (synthetic)",
+      "node_id": "V-C20",
+      "population": 2500,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 99,
+      "id": "C21",
+      "label": "Cluster C21 (synthetic)",
+      "node_id": "V-C21",
+      "population": 10700,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 55,
+      "id": "C22",
+      "label": "Cluster C22 (synthetic)",
+      "node_id": "V-C22",
+      "population": 3400,
+      "zone_class": "central"
+    },
+    {
+      "demand_visits_per_week": 44,
+      "id": "C23",
+      "label": "Cluster C23 (synthetic)",
+      "node_id": "V-C23",
+      "population": 6100,
+      "zone_class": "rural"
+    },
+    {
+      "demand_visits_per_week": 109,
+      "id": "C24",
+      "label": "Cluster C24 (synthetic)",
+      "node_id": "V-C24",
+      "population": 5100,
+      "zone_class": "central"
+    }
+  ],
+  "edges": [
+    {
+      "direction": "two_way",
+      "from_node": "V-C01",
+      "minutes": 22.0,
+      "to_node": "V-E03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C01",
+      "minutes": 26.0,
+      "to_node": "V-E04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C01",
+      "minutes": 24.0,
+      "to_node": "V-N03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C02",
+      "minutes": 16.0,
+      "to_node": "V-C07"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C02",
+      "minutes": 26.0,
+      "to_node": "V-C24"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C02",
+      "minutes": 24.0,
+      "to_node": "V-N08"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C03",
+      "minutes": 36.0,
+      "to_node": "V-C09"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C03",
+      "minutes": 54.0,
+      "to_node": "V-N03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C03",
+      "minutes": 15.0,
+      "to_node": "V-N07"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C04",
+      "minutes": 28.0,
+      "to_node": "V-C20"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C04",
+      "minutes": 19.0,
+      "to_node": "V-C23"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C04",
+      "minutes": 15.0,
+      "to_node": "V-N01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C05",
+      "minutes": 14.0,
+      "to_node": "V-C08"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C05",
+      "minutes": 13.0,
+      "to_node": "V-C22"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C05",
+      "minutes": 16.0,
+      "to_node": "V-E01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C05",
+      "minutes": 20.0,
+      "to_node": "V-N02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C06",
+      "minutes": 25.0,
+      "to_node": "V-C14"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C06",
+      "minutes": 42.0,
+      "to_node": "V-C16"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C06",
+      "minutes": 42.0,
+      "to_node": "V-N04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C07",
+      "minutes": 25.0,
+      "to_node": "V-C09"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C07",
+      "minutes": 19.0,
+      "to_node": "V-C11"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C07",
+      "minutes": 12.0,
+      "to_node": "V-C13"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C08",
+      "minutes": 38.0,
+      "to_node": "V-C15"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C08",
+      "minutes": 11.0,
+      "to_node": "V-C22"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C08",
+      "minutes": 27.0,
+      "to_node": "V-E01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C08",
+      "minutes": 27.0,
+      "to_node": "V-N02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C09",
+      "minutes": 15.0,
+      "to_node": "V-C13"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C09",
+      "minutes": 30.0,
+      "to_node": "V-N07"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C10",
+      "minutes": 14.0,
+      "to_node": "V-C16"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C10",
+      "minutes": 29.0,
+      "to_node": "V-N02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C10",
+      "minutes": 28.0,
+      "to_node": "V-N04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C11",
+      "minutes": 25.0,
+      "to_node": "V-C13"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C11",
+      "minutes": 19.0,
+      "to_node": "V-C24"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C11",
+      "minutes": 21.0,
+      "to_node": "V-E02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C11",
+      "minutes": 23.0,
+      "to_node": "V-E04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C12",
+      "minutes": 14.0,
+      "to_node": "V-C21"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C12",
+      "minutes": 30.0,
+      "to_node": "V-N01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C12",
+      "minutes": 23.0,
+      "to_node": "V-N06"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C13",
+      "minutes": 33.0,
+      "to_node": "V-N07"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C14",
+      "minutes": 24.0,
+      "to_node": "V-C20"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C14",
+      "minutes": 17.0,
+      "to_node": "V-N04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C15",
+      "minutes": 24.0,
+      "to_node": "V-N05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C15",
+      "minutes": 27.0,
+      "to_node": "V-N08"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C16",
+      "minutes": 22.0,
+      "to_node": "V-C18"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C16",
+      "minutes": 23.0,
+      "to_node": "V-N02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C17",
+      "minutes": 21.0,
+      "to_node": "V-C22"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C17",
+      "minutes": 13.0,
+      "to_node": "V-C24"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C17",
+      "minutes": 16.0,
+      "to_node": "V-N08"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C18",
+      "minutes": 14.0,
+      "to_node": "V-N02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C18",
+      "minutes": 24.0,
+      "to_node": "V-N05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C19",
+      "minutes": 18.0,
+      "to_node": "V-C20"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C19",
+      "minutes": 15.0,
+      "to_node": "V-C23"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C19",
+      "minutes": 30.0,
+      "to_node": "V-N04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C20",
+      "minutes": 12.0,
+      "to_node": "V-C23"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C20",
+      "minutes": 16.0,
+      "to_node": "V-N04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C21",
+      "minutes": 42.0,
+      "to_node": "V-N01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C21",
+      "minutes": 47.0,
+      "to_node": "V-N03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C21",
+      "minutes": 10.0,
+      "to_node": "V-N06"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C22",
+      "minutes": 13.0,
+      "to_node": "V-E01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C23",
+      "minutes": 28.0,
+      "to_node": "V-E05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C23",
+      "minutes": 30.0,
+      "to_node": "V-N01"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C24",
+      "minutes": 20.0,
+      "to_node": "V-E02"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-C24",
+      "minutes": 25.0,
+      "to_node": "V-N08"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-E01",
+      "minutes": 25.0,
+      "to_node": "V-E05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-E02",
+      "minutes": 18.0,
+      "to_node": "V-E03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-E03",
+      "minutes": 15.0,
+      "to_node": "V-E04"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-E03",
+      "minutes": 24.0,
+      "to_node": "V-E05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-E04",
+      "minutes": 50.0,
+      "to_node": "V-N03"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-N02",
+      "minutes": 28.0,
+      "to_node": "V-N05"
+    },
+    {
+      "direction": "two_way",
+      "from_node": "V-N03",
+      "minutes": 43.0,
+      "to_node": "V-N06"
+    }
+  ],
+  "manifest": {
+    "assumptions": [
+      "All values are synthetic and do not describe the real district.",
+      "Demand means scheduled outpatient visits requested per week, not people.",
+      "Costs are illustrative weekly-equivalent planning costs in PKR, not procurement prices.",
+      "Travel minutes come from a schematic road network, not real roads or terrain.",
+      "Population is descriptive only and is not used to compute demand.",
+      "Candidate(s) N05 marked ineligible to exercise the eligibility constraint."
+    ],
+    "district_label": "Bajaur — synthetic planning sandbox",
+    "generator": {
+      "candidate_capacity_range": [
+        180,
+        300
+      ],
+      "candidate_cost_range_pkr": [
+        90000,
+        160000
+      ],
+      "demand_range": [
+        30,
+        110
+      ],
+      "existing_capacity_range": [
+        150,
+        300
+      ],
+      "neighbours_per_node": 3,
+      "seed": 2026
+    },
+    "id": "demo-bajaur-v1",
+    "is_synthetic": true,
+    "license": "CC0-1.0 (synthetic demonstration data)",
+    "model_scope": "Non-emergency outpatient accessibility, one modeled week, aggregate clusters.",
+    "sha256": "deebc2d838cbf1436dc51ad9365e51931a63ffd1133d94c10fef286b7e24d36f",
+    "source_date": "2026-11-20",
+    "source_url": null,
+    "version": "1"
+  },
+  "nodes": [
+    {
+      "display_x": 38.9,
+      "display_y": 41.1,
+      "id": "V-E01",
+      "label": "Existing site E01 location"
+    },
+    {
+      "display_x": 51.9,
+      "display_y": 50.4,
+      "id": "V-E02",
+      "label": "Existing site E02 location"
+    },
+    {
+      "display_x": 60.9,
+      "display_y": 42.2,
+      "id": "V-E03",
+      "label": "Existing site E03 location"
+    },
+    {
+      "display_x": 67.3,
+      "display_y": 52.2,
+      "id": "V-E04",
+      "label": "Existing site E04 location"
+    },
+    {
+      "display_x": 51.9,
+      "display_y": 30.0,
+      "id": "V-E05",
+      "label": "Existing site E05 location"
+    },
+    {
+      "display_x": 57.1,
+      "display_y": 5.8,
+      "id": "V-N01",
+      "label": "Candidate zone N01 location"
+    },
+    {
+      "display_x": 14.7,
+      "display_y": 40.5,
+      "id": "V-N02",
+      "label": "Candidate zone N02 location"
+    },
+    {
+      "display_x": 89.2,
+      "display_y": 38.5,
+      "id": "V-N03",
+      "label": "Candidate zone N03 location"
+    },
+    {
+      "display_x": 24.7,
+      "display_y": 13.3,
+      "id": "V-N04",
+      "label": "Candidate zone N04 location"
+    },
+    {
+      "display_x": 8.5,
+      "display_y": 54.7,
+      "id": "V-N05",
+      "label": "Candidate zone N05 location"
+    },
+    {
+      "display_x": 85.6,
+      "display_y": 11.4,
+      "id": "V-N06",
+      "label": "Candidate zone N06 location"
+    },
+    {
+      "display_x": 89.5,
+      "display_y": 75.1,
+      "id": "V-N07",
+      "label": "Candidate zone N07 location"
+    },
+    {
+      "display_x": 33.1,
+      "display_y": 70.0,
+      "id": "V-N08",
+      "label": "Candidate zone N08 location"
+    },
+    {
+      "display_x": 76.8,
+      "display_y": 41.1,
+      "id": "V-C01",
+      "label": "Cluster C01 centre"
+    },
+    {
+      "display_x": 45.6,
+      "display_y": 74.4,
+      "id": "V-C02",
+      "label": "Cluster C02 centre"
+    },
+    {
+      "display_x": 93.9,
+      "display_y": 65.3,
+      "id": "V-C03",
+      "label": "Cluster C03 centre"
+    },
+    {
+      "display_x": 48.0,
+      "display_y": 7.8,
+      "id": "V-C04",
+      "label": "Cluster C04 centre"
+    },
+    {
+      "display_x": 28.0,
+      "display_y": 39.9,
+      "id": "V-C05",
+      "label": "Cluster C05 centre"
+    },
+    {
+      "display_x": 4.3,
+      "display_y": 3.0,
+      "id": "V-C06",
+      "label": "Cluster C06 centre"
+    },
+    {
+      "display_x": 57.6,
+      "display_y": 72.0,
+      "id": "V-C07",
+      "label": "Cluster C07 centre"
+    },
+    {
+      "display_x": 26.3,
+      "display_y": 49.0,
+      "id": "V-C08",
+      "label": "Cluster C08 centre"
+    },
+    {
+      "display_x": 73.7,
+      "display_y": 73.8,
+      "id": "V-C09",
+      "label": "Cluster C09 centre"
+    },
+    {
+      "display_x": 17.5,
+      "display_y": 26.2,
+      "id": "V-C10",
+      "label": "Cluster C10 centre"
+    },
+    {
+      "display_x": 57.8,
+      "display_y": 59.9,
+      "id": "V-C11",
+      "label": "Cluster C11 centre"
+    },
+    {
+      "display_x": 70.7,
+      "display_y": 13.0,
+      "id": "V-C12",
+      "label": "Cluster C12 centre"
+    },
+    {
+      "display_x": 65.8,
+      "display_y": 72.2,
+      "id": "V-C13",
+      "label": "Cluster C13 centre"
+    },
+    {
+      "display_x": 21.5,
+      "display_y": 4.0,
+      "id": "V-C14",
+      "label": "Cluster C14 centre"
+    },
+    {
+      "display_x": 13.0,
+      "display_y": 68.7,
+      "id": "V-C15",
+      "label": "Cluster C15 centre"
+    },
+    {
+      "display_x": 7.8,
+      "display_y": 28.7,
+      "id": "V-C16",
+      "label": "Cluster C16 centre"
+    },
+    {
+      "display_x": 36.2,
+      "display_y": 59.9,
+      "id": "V-C17",
+      "label": "Cluster C17 centre"
+    },
+    {
+      "display_x": 5.4,
+      "display_y": 40.8,
+      "id": "V-C18",
+      "label": "Cluster C18 centre"
+    },
+    {
+      "display_x": 33.8,
+      "display_y": 25.5,
+      "id": "V-C19",
+      "label": "Cluster C19 centre"
+    },
+    {
+      "display_x": 33.6,
+      "display_y": 12.0,
+      "id": "V-C20",
+      "label": "Cluster C20 centre"
+    },
+    {
+      "display_x": 78.7,
+      "display_y": 14.4,
+      "id": "V-C21",
+      "label": "Cluster C21 centre"
+    },
+    {
+      "display_x": 34.6,
+      "display_y": 47.3,
+      "id": "V-C22",
+      "label": "Cluster C22 centre"
+    },
+    {
+      "display_x": 40.5,
+      "display_y": 17.5,
+      "id": "V-C23",
+      "label": "Cluster C23 centre"
+    },
+    {
+      "display_x": 45.5,
+      "display_y": 58.8,
+      "id": "V-C24",
+      "label": "Cluster C24 centre"
+    }
+  ],
+  "provenance": [
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "community",
+      "field": "demand_visits_per_week",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "community",
+      "field": "population",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "site",
+      "field": "capacity_per_week",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "site",
+      "field": "fixed_cost_pkr",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "site",
+      "field": "eligible",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "edge",
+      "field": "minutes",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    },
+    {
+      "caveat": "Fictional value generated for demonstration; not a real district statistic.",
+      "entity": "node",
+      "field": "display_x/display_y",
+      "method": "synthetic",
+      "source": "civitwin generator seed 2026",
+      "timestamp": "2026-11-20T00:00:00Z"
+    }
+  ],
+  "sites": [
+    {
+      "capacity_per_week": 180,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E01",
+      "label": "Existing service site E01 (synthetic)",
+      "node_id": "V-E01",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 160,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E02",
+      "label": "Existing service site E02 (synthetic)",
+      "node_id": "V-E02",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 190,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E03",
+      "label": "Existing service site E03 (synthetic)",
+      "node_id": "V-E03",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 260,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E04",
+      "label": "Existing service site E04 (synthetic)",
+      "node_id": "V-E04",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 240,
+      "eligible": true,
+      "fixed_cost_pkr": 0,
+      "id": "E05",
+      "label": "Existing service site E05 (synthetic)",
+      "node_id": "V-E05",
+      "type": "existing"
+    },
+    {
+      "capacity_per_week": 180,
+      "eligible": true,
+      "fixed_cost_pkr": 120000,
+      "id": "N01",
+      "label": "Candidate zone N01 (synthetic)",
+      "node_id": "V-N01",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 270,
+      "eligible": true,
+      "fixed_cost_pkr": 100000,
+      "id": "N02",
+      "label": "Candidate zone N02 (synthetic)",
+      "node_id": "V-N02",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 230,
+      "eligible": true,
+      "fixed_cost_pkr": 120000,
+      "id": "N03",
+      "label": "Candidate zone N03 (synthetic)",
+      "node_id": "V-N03",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 240,
+      "eligible": true,
+      "fixed_cost_pkr": 120000,
+      "id": "N04",
+      "label": "Candidate zone N04 (synthetic)",
+      "node_id": "V-N04",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 210,
+      "eligible": false,
+      "fixed_cost_pkr": 150000,
+      "id": "N05",
+      "label": "Candidate zone N05 (synthetic)",
+      "node_id": "V-N05",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 240,
+      "eligible": true,
+      "fixed_cost_pkr": 140000,
+      "id": "N06",
+      "label": "Candidate zone N06 (synthetic)",
+      "node_id": "V-N06",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 210,
+      "eligible": true,
+      "fixed_cost_pkr": 150000,
+      "id": "N07",
+      "label": "Candidate zone N07 (synthetic)",
+      "node_id": "V-N07",
+      "type": "candidate"
+    },
+    {
+      "capacity_per_week": 200,
+      "eligible": true,
+      "fixed_cost_pkr": 100000,
+      "id": "N08",
+      "label": "Candidate zone N08 (synthetic)",
+      "node_id": "V-N08",
+      "type": "candidate"
+    }
+  ]
+}

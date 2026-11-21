@@ -1,0 +1,845 @@
+{
+  "generated_at": "2026-11-20T17:15:26Z",
+  "machine": {
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "logical_cpus": 4,
+    "ram_gb": 11.0,
+    "os": "Linux 7.2.15+kali-amd64",
+    "python": "3.14.10"
+  },
+  "solver": "scipy-highs 1.17.1",
+  "dataset": {
+    "id": "demo-bajaur-v1",
+    "sha256": "deebc2d838cbf1436dc51ad9365e51931a63ffd1133d94c10fef286b7e24d36f",
+    "communities": 24,
+    "sites": 13,
+    "edges": 70
+  },
+  "default_plan": {
+    "dataset_version_id": "demo-bajaur-v1",
+    "budget_pkr": 300000,
+    "max_new_units": 2,
+    "threshold_minutes": 45,
+    "demand_multiplier_pct": 100,
+    "equity_min_pct": 0,
+    "policy": "coverage_first",
+    "seed": 2026,
+    "min_coverage_pct": null
+  },
+  "timings_ms": {
+    "baseline": {
+      "runs": [
+        55,
+        54,
+        51
+      ],
+      "median": 54,
+      "max": 55
+    },
+    "optimized": {
+      "runs": [
+        1069,
+        1116,
+        1127
+      ],
+      "median": 1116,
+      "max": 1127
+    },
+    "greedy": {
+      "runs": [
+        840,
+        881,
+        853
+      ],
+      "median": 853,
+      "max": 881
+    }
+  },
+  "targets": {
+    "default_solve_ms": 10000,
+    "stress_suite_ms": 60000
+  },
+  "default_solve_within_target": true,
+  "stress_suite_ms": 2422,
+  "stress_within_target": true,
+  "stress_failures": {
+    "base": 0,
+    "alt": 0
+  },
+  "grid": [
+    {
+      "budget_pkr": 0,
+      "max_new_units": 0,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 55,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 147,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 62,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 0,
+      "max_new_units": 0,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 53,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 0,
+      "max_new_units": 1,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 52,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 104,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 67,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 0,
+      "max_new_units": 1,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 2,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 70,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 11,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 0,
+      "max_new_units": 2,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 54,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 103,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 63,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 0,
+      "max_new_units": 2,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 51,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 0,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 53,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 104,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 65,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 0,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 53,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 8,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 1,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 54,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 515,
+        "audit_passed": true,
+        "coverage_pct": 62.32,
+        "served_pct": 76.79,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 100000,
+        "selected": [
+          "N02"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 318,
+        "audit_passed": true,
+        "coverage_pct": 62.79,
+        "served_pct": 75.01,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 120000,
+        "selected": [
+          "N04"
+        ]
+      },
+      "optimized_minus_greedy_pp": 0.47
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 1,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 429,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 21,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 2,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 69,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 496,
+        "audit_passed": true,
+        "coverage_pct": 62.32,
+        "served_pct": 76.79,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 100000,
+        "selected": [
+          "N02"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 585,
+        "audit_passed": true,
+        "coverage_pct": 62.79,
+        "served_pct": 75.01,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 120000,
+        "selected": [
+          "N04"
+        ]
+      },
+      "optimized_minus_greedy_pp": 0.47
+    },
+    {
+      "budget_pkr": 150000,
+      "max_new_units": 2,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 498,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 11,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 0,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 59,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 106,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 63,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 0,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 52,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 1,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 58,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 559,
+        "audit_passed": true,
+        "coverage_pct": 62.32,
+        "served_pct": 76.79,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 100000,
+        "selected": [
+          "N02"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 282,
+        "audit_passed": true,
+        "coverage_pct": 62.79,
+        "served_pct": 75.01,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 120000,
+        "selected": [
+          "N04"
+        ]
+      },
+      "optimized_minus_greedy_pp": 0.47
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 1,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 456,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 2,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 50,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 918,
+        "audit_passed": true,
+        "coverage_pct": 73.07,
+        "served_pct": 90.96,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 220000,
+        "selected": [
+          "N02",
+          "N04"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 1102,
+        "audit_passed": true,
+        "coverage_pct": 74.66,
+        "served_pct": 87.42,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 270000,
+        "selected": [
+          "N04",
+          "N07"
+        ]
+      },
+      "optimized_minus_greedy_pp": 1.59
+    },
+    {
+      "budget_pkr": 300000,
+      "max_new_units": 2,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 807,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 0,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 55,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 109,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 63,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "optimized_minus_greedy_pp": 0.0
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 0,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 51,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 1,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 51,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 485,
+        "audit_passed": true,
+        "coverage_pct": 62.32,
+        "served_pct": 76.79,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 100000,
+        "selected": [
+          "N02"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 253,
+        "audit_passed": true,
+        "coverage_pct": 62.79,
+        "served_pct": 75.01,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 120000,
+        "selected": [
+          "N04"
+        ]
+      },
+      "optimized_minus_greedy_pp": 0.47
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 1,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 479,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 10,
+        "audit_passed": null
+      }
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 2,
+      "equity_min_pct": 0,
+      "baseline": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 50,
+        "audit_passed": true,
+        "coverage_pct": 48.61,
+        "served_pct": 60.84,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 0,
+        "selected": []
+      },
+      "greedy": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 861,
+        "audit_passed": true,
+        "coverage_pct": 73.07,
+        "served_pct": 90.96,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 220000,
+        "selected": [
+          "N02",
+          "N04"
+        ]
+      },
+      "optimized": {
+        "status": "COMPLETED",
+        "solver_status": "OPTIMAL",
+        "runtime_ms": 987,
+        "audit_passed": true,
+        "coverage_pct": 74.66,
+        "served_pct": 87.42,
+        "worst_cluster_pct": 0.0,
+        "cost_pkr": 270000,
+        "selected": [
+          "N04",
+          "N07"
+        ]
+      },
+      "optimized_minus_greedy_pp": 1.59
+    },
+    {
+      "budget_pkr": 450000,
+      "max_new_units": 2,
+      "equity_min_pct": 10,
+      "baseline": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 0,
+        "audit_passed": null
+      },
+      "greedy": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 819,
+        "audit_passed": null
+      },
+      "optimized": {
+        "status": "NO_SOLUTION",
+        "solver_status": "INFEASIBLE",
+        "runtime_ms": 11,
+        "audit_passed": null
+      }
+    }
+  ],
+  "audit_pass_rate_completed": 1.0,
+  "optimized_never_below_greedy": true
+}

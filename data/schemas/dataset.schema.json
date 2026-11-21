@@ -1,0 +1,394 @@
+{
+  "$defs": {
+    "Community": {
+      "additionalProperties": false,
+      "properties": {
+        "demand_visits_per_week": {
+          "maximum": 1000000,
+          "minimum": 0,
+          "title": "Demand Visits Per Week",
+          "type": "integer"
+        },
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 120,
+          "title": "Label",
+          "type": "string"
+        },
+        "node_id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "population": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Population"
+        },
+        "zone_class": {
+          "enum": [
+            "central",
+            "rural",
+            "remote"
+          ],
+          "title": "Zone Class",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "demand_visits_per_week",
+        "zone_class",
+        "node_id"
+      ],
+      "title": "Community",
+      "type": "object"
+    },
+    "DatasetManifest": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "district_label": {
+          "title": "District Label",
+          "type": "string"
+        },
+        "generator": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  }
+                ]
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generator"
+        },
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "is_synthetic": {
+          "title": "Is Synthetic",
+          "type": "boolean"
+        },
+        "license": {
+          "title": "License",
+          "type": "string"
+        },
+        "model_scope": {
+          "title": "Model Scope",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "source_date": {
+          "title": "Source Date",
+          "type": "string"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        },
+        "version": {
+          "maxLength": 32,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "district_label",
+        "is_synthetic",
+        "source_date",
+        "license",
+        "model_scope"
+      ],
+      "title": "DatasetManifest",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "direction": {
+          "enum": [
+            "two_way",
+            "one_way"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "from_node": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "From Node",
+          "type": "string"
+        },
+        "minutes": {
+          "exclusiveMinimum": 0,
+          "maximum": 10000,
+          "title": "Minutes",
+          "type": "number"
+        },
+        "to_node": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "To Node",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from_node",
+        "to_node",
+        "minutes",
+        "direction"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "display_x": {
+          "title": "Display X",
+          "type": "number"
+        },
+        "display_y": {
+          "title": "Display Y",
+          "type": "number"
+        },
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 120,
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "display_x",
+        "display_y"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "ProvenanceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "caveat": {
+          "title": "Caveat",
+          "type": "string"
+        },
+        "entity": {
+          "title": "Entity",
+          "type": "string"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "synthetic",
+            "observed",
+            "estimated"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity",
+        "field",
+        "source",
+        "method",
+        "timestamp",
+        "caveat"
+      ],
+      "title": "ProvenanceRecord",
+      "type": "object"
+    },
+    "Site": {
+      "additionalProperties": false,
+      "properties": {
+        "capacity_per_week": {
+          "maximum": 1000000,
+          "minimum": 0,
+          "title": "Capacity Per Week",
+          "type": "integer"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "fixed_cost_pkr": {
+          "maximum": 100000000,
+          "minimum": 0,
+          "title": "Fixed Cost Pkr",
+          "type": "integer"
+        },
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 120,
+          "title": "Label",
+          "type": "string"
+        },
+        "node_id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "existing",
+            "candidate"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "type",
+        "node_id",
+        "capacity_per_week",
+        "fixed_cost_pkr",
+        "eligible"
+      ],
+      "title": "Site",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "communities": {
+      "items": {
+        "$ref": "#/$defs/Community"
+      },
+      "title": "Communities",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/Edge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "manifest": {
+      "$ref": "#/$defs/DatasetManifest"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "provenance": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ProvenanceRecord"
+      },
+      "title": "Provenance",
+      "type": "array"
+    },
+    "sites": {
+      "items": {
+        "$ref": "#/$defs/Site"
+      },
+      "title": "Sites",
+      "type": "array"
+    }
+  },
+  "required": [
+    "manifest",
+    "nodes",
+    "edges",
+    "communities",
+    "sites"
+  ],
+  "title": "Dataset",
+  "type": "object"
+}

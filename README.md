@@ -13,6 +13,16 @@ filled from the audited result.** No language model computes or writes any numbe
 Specification: [docs/SRS.md](docs/SRS.md) · Design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) ·
 Status and requirement checklist: [docs/IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md)
 
+## GitHub Pages demo
+
+[Open the public CIVITWIN demo](https://ahmadalihamza.github.io/CIVI-TWIN/). It shows a fixed,
+synthetic scenario with audited baseline, greedy and optimized runs, 20 stress cases, and
+HTML/JSON/CSV reports. GitHub Actions regenerates the demo from the real solver and verifier.
+Use the local FastAPI app to edit assumptions, run scenarios and save a history.
+
+Preview the same static build locally after setup with `python scripts/build_pages.py dist/pages`
+and `python -m http.server 8002 --bind 127.0.0.1 --directory dist/pages`.
+
 ## Quick start (Linux / macOS)
 
 Requires Python 3.11+ (verified on 3.14.10). Works offline once dependencies are installed.
@@ -36,12 +46,24 @@ Without Make: `.venv/bin/python -m civitwin_api`, `.venv/bin/python -m pytest -q
 
 ### Windows (PowerShell)
 
+Use Python 3.14 with the locked dependency set. These commands create a Windows environment
+in `.venv-win`, which can coexist with a copied Linux `.venv`.
+
 ```powershell
-py -3 -m venv .venv
-.venv\Scripts\python -m pip install -r requirements.lock.txt
-.venv\Scripts\python -m pip install --no-deps --no-build-isolation -e .
-.venv\Scripts\python -m civitwin_api
-.venv\Scripts\python -m pytest -q
+py -3.14 -m venv .venv-win
+.venv-win\Scripts\python -m pip install -r requirements.lock.txt
+.venv-win\Scripts\python -m pip install --no-deps -e .
+.venv-win\Scripts\python -m civitwin_api
+```
+
+If port 8000 is in use, set `$env:API_PORT = '8001'` before launching. If Python 3.14 was
+installed through `uv`, use `uv venv --python 3.14 .venv-win` and `uv pip install --python
+.venv-win/Scripts/python.exe -r requirements.lock.txt -e .` for setup. With the API running,
+open the localhost address printed by Uvicorn and use a second terminal for verification.
+
+```powershell
+.venv-win\Scripts\python -m pytest -q
+.venv-win\Scripts\python scripts/smoke.py --url http://127.0.0.1:8000
 ```
 
 ### Solver backends

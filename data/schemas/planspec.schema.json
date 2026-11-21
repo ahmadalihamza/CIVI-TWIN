@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "budget_pkr": {
+      "maximum": 100000000,
+      "minimum": 0,
+      "title": "Budget Pkr",
+      "type": "integer"
+    },
+    "dataset_version_id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "title": "Dataset Version Id",
+      "type": "string"
+    },
+    "demand_multiplier_pct": {
+      "maximum": 300,
+      "minimum": 1,
+      "title": "Demand Multiplier Pct",
+      "type": "integer"
+    },
+    "equity_min_pct": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Equity Min Pct",
+      "type": "integer"
+    },
+    "max_new_units": {
+      "maximum": 50,
+      "minimum": 0,
+      "title": "Max New Units",
+      "type": "integer"
+    },
+    "min_coverage_pct": {
+      "anyOf": [
+        {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Min Coverage Pct"
+    },
+    "policy": {
+      "enum": [
+        "coverage_first",
+        "equity_first",
+        "cost_efficient"
+      ],
+      "title": "Policy",
+      "type": "string"
+    },
+    "seed": {
+      "maximum": 2147483647,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "threshold_minutes": {
+      "maximum": 240,
+      "minimum": 1,
+      "title": "Threshold Minutes",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "dataset_version_id",
+    "budget_pkr",
+    "max_new_units",
+    "threshold_minutes",
+    "demand_multiplier_pct",
+    "equity_min_pct",
+    "policy",
+    "seed"
+  ],
+  "title": "PlanSpec",
+  "type": "object"
+}

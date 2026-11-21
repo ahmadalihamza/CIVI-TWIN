@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <script>try{var t=localStorage.getItem("civitwin.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <title>CIVITWIN AI — Planning sandbox</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230e7c86'/%3E%3Cpath d='M12 6 6.5 16h11z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=22">
+</head>
+<body>
+<!-- icon sprite (inline, offline) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M11 6.8 6 16.2M13 6.8l5 9.4M7 18h10"/><circle cx="12" cy="13.5" r="1.6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-3M12 16V8M17 16v-6"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><path d="M8 2v16M16 6v16"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v4c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M3 11v4c0 1.7 2.7 3 6 3 1 0 2-.1 2.8-.4"/><ellipse cx="17" cy="15" rx="5" ry="2.5"/><path d="M12 15v3.5c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V15"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M4 7h16M7 7l-3 7c0 1.7 1.3 3 3 3s3-1.3 3-3zM17 7l-3 7c0 1.7 1.3 3 3 3s3-1.3 3-3z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2v6L4 18a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 18l-5-10V2"/><path d="M8 2h8M7 15h10"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><path d="M7 7h.01"/></symbol>
+  <symbol id="i-zin" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></symbol>
+  <symbol id="i-zout" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3M8 11h6"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.2 7.8 14.1 14.1 7.8 16.2 9.9 9.9 16.2 7.8"/></symbol>
+</svg>
+
+<div id="topProgress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="app" id="app">
+  <header class="masthead">
+    <div class="mh-row">
+      <button class="btn ghost sm menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <a class="mh-brand" href="#overview"><span class="brand-mark"><svg viewBox="0 0 24 24"><use href="#i-logo"/></svg></span><span><b>CIVITWIN</b><small lang="ur">صحت تک رسائی</small></span></a>
+      <div class="mh-place"><h1 id="pageTitle">Map &amp; plan</h1><p class="sub" id="pageSub">Bajaur District, Khyber Pakhtunkhwa</p></div>
+      <div class="spacer"></div>
+      <label class="mh-ds" data-local-only><span class="sr-only">Dataset</span><select id="dsSelect" aria-label="Dataset"></select></label>
+      <span class="badge-synthetic" id="dataBadge">…</span>
+      <button class="btn theme-btn" id="themeBtn" type="button" aria-label="Switch theme" title="Toggle light / dark theme"><svg class="icon"><use href="#i-sun"/></svg></button>
+    </div>
+    <nav class="mh-nav" id="mainNav" aria-label="Sections">
+      <a href="#overview" data-view="overview">Map &amp; plan<span class="ur" lang="ur">نقشہ</span></a>
+      <a href="#plan" data-view="plan" data-local-only>Plan builder<span class="ur" lang="ur">منصوبہ</span></a>
+      <a href="#results" data-view="results">Compare<span class="ur" lang="ur">موازنہ</span><span class="num" id="navResultsBadge" hidden>new</span></a>
+      <a href="#stress" data-view="stress">Stress test<span class="ur" lang="ur">جانچ</span></a>
+      <a href="#report" data-view="report">Report<span class="ur" lang="ur">رپورٹ</span></a>
+      <a href="#data" data-view="data">Data &amp; sources<span class="ur" lang="ur">ڈیٹا</span></a>
+      <a href="#about" data-view="about">About<span class="ur" lang="ur">ہمارا طریقہ</span></a>
+      <span class="spacer"></span>
+      <span class="mh-status"><span class="dot ok" id="dotApi"></span><b id="sfApi">connecting…</b> · <span id="sfSolver">—</span> · AI <span id="sfAi">—</span></span>
+      <button type="button" class="side-link" id="tourBtn" data-local-only>Tour</button>
+    </nav>
+  </header>
+  <div class="scrim" id="scrim"></div>
+    <div class="notice-bar" role="note" id="noticeBar"><svg class="icon sm"><use href="#i-info"/></svg><span id="noticeText">Loading…</span></div>
+  <div class="main-col">
+    <main id="main" tabindex="-1">
+      <div id="globalError" class="alert err" role="alert" hidden></div>
+
+      <!-- OVERVIEW -->
+      <section class="view" id="view-overview" aria-labelledby="pageTitle">
+        <div class="desk">
+          <div class="desk-map">
+            <div class="map-toolbar" data-local-only>
+              <div class="seg" role="group" aria-label="Map shows">
+                <button data-mapmode="travel" aria-pressed="true">Travel time</button>
+                <button data-mapmode="coverage" aria-pressed="false">Plan coverage</button>
+                <button data-mapmode="literacy" aria-pressed="false">Literacy</button>
+              </div>
+              <label class="tgl"><input type="checkbox" id="lyrRoads" checked> roads</label>
+              <label class="tgl"><input type="checkbox" id="lyrSettle" checked> all settlements</label>
+              <label class="tgl"><input type="checkbox" id="lyrCand"> candidate sites</label>
+              <label class="tgl"><input type="checkbox" id="lyrFlows"> who goes where</label>
+            </div>
+            <div id="deskMap" class="geomap-host"></div>
+            <div class="legend" id="deskLegend"></div>
+          </div>
+          <aside class="desk-panel" aria-label="Planning panel">
+            <section class="pblock" id="deskFacts"></section>
+            <section class="pblock" id="deskPlan" data-local-only></section>
+            <section class="pblock" id="deskResult"></section>
+            <section class="pblock" id="deskCoord"></section>
+            <section class="pblock" id="deskVillage"></section>
+          </aside>
+        </div>
+      </section>
+      <!-- DATA -->
+      <section class="view anim" id="view-data" aria-labelledby="pageTitle" hidden>
+        <div class="grid g-main-side">
+          <div class="card">
+            <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-map"/></svg></div>
+              <div><h2 id="dataMapTitle">Map</h2><p class="desc" id="dataMapDesc"></p></div></div>
+            <div class="card-b" id="dataMap"></div>
+          </div>
+          <div class="stack">
+            <div class="card">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-db"/></svg></div><div><h2>Dataset version</h2><p class="desc">Immutable, hashed, synthetic</p></div></div>
+              <div class="card-b" id="manifestBox"></div>
+            </div>
+            <div class="card">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-info"/></svg></div><div><h2>Assumptions</h2></div></div>
+              <div class="card-b" id="assumptionsBox"></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid g-2 mt-1">
+          <div class="card"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-users"/></svg></div><div><h2>Community clusters</h2><p class="desc">Weekly demand and nearest travel times</p></div></div>
+            <div class="card-b flush table-wrap" id="commTable"></div></div>
+          <div class="card"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-building"/></svg></div><div><h2>Service sites</h2><p class="desc">Existing sites and candidate zones</p></div></div>
+            <div class="card-b flush table-wrap" id="siteTable"></div></div>
+        </div>
+      </section>
+
+      <!-- PLAN -->
+      <section class="view anim" id="view-plan" aria-labelledby="pageTitle" hidden>
+        <div class="flow" id="flow" aria-label="Progress"></div>
+        <div class="grid g-main-side mt-1">
+          <div class="stack">
+            <div class="card">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-spark"/></svg></div>
+                <div><h2><label for="askText">Describe your scenario</label></h2><p class="desc">English or Urdu · offline parser · fills the form for your review, never runs anything</p></div></div>
+              <div class="card-b">
+                <div class="ask-box"><textarea id="askText" dir="auto" placeholder="e.g. Budget Rs 3 lakh per week, 2 new units, within 45 minutes"></textarea><span class="lang-hint">Ctrl + Enter</span></div>
+                <div class="examples" id="examples" aria-label="Example requests"></div>
+                <div class="row"><button class="btn dark" id="parseBtn"><svg class="icon sm"><use href="#i-spark"/></svg>Read my request</button>
+                  <span class="tiny muted">No text leaves this computer.</span></div>
+                <div id="parseOut" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-sliders"/></svg></div><div><h2>Plan parameters</h2><p class="desc">All values are validated on the server before review</p></div>
+                <div class="right"><button type="button" class="btn ghost sm" id="resetBtn"><svg class="icon sm"><use href="#i-refresh"/></svg>Defaults</button></div></div>
+              <form class="card-b" id="planForm" novalidate>
+                <div class="lbl small muted" style="margin-bottom:.45rem">Quick scenarios — one click fills the form, you still review</div>
+                <div class="presets" id="presets"></div>
+                <div class="field">
+                  <label for="f_budget">Weekly budget for new units <span class="val-pill" id="pv_budget"></span></label>
+                  <div class="slider-row"><input type="range" id="f_budget_r" min="0" max="1000000" step="10000" aria-label="Budget slider"><input type="number" id="f_budget" min="0" max="100000000" step="1000" inputmode="numeric" aria-describedby="f_budget_hint"></div>
+                  <div class="hint" id="f_budget_hint"></div><div class="err" id="e_budget_pkr"></div>
+                </div>
+                <div class="grid g-2" style="gap:0 1.25rem">
+                  <div class="field">
+                    <label for="f_units">Maximum new units</label>
+                    <div class="stepper"><button type="button" data-step="-1" aria-label="Fewer units">−</button><input type="number" id="f_units" min="0" max="50" step="1"><button type="button" data-step="1" aria-label="More units">+</button></div>
+                    <div class="hint" id="f_units_hint"></div><div class="err" id="e_max_new_units"></div>
+                  </div>
+                  <div class="field">
+                    <label for="f_threshold">Travel-time threshold <span class="val-pill" id="pv_threshold"></span></label>
+                    <div class="slider-row"><input type="range" id="f_threshold_r" min="10" max="120" step="5" aria-label="Threshold slider"><input type="number" id="f_threshold" min="1" max="240" step="1"></div>
+                    <div class="hint">Visits within this many minutes count as covered.</div><div class="err" id="e_threshold_minutes"></div>
+                  </div>
+                  <div class="field">
+                    <label for="f_demand">Demand level <span class="val-pill" id="pv_demand"></span></label>
+                    <div class="slider-row"><input type="range" id="f_demand_r" min="50" max="200" step="5" aria-label="Demand slider"><input type="number" id="f_demand" min="1" max="300" step="1"></div>
+                    <div class="hint">100% = synthetic baseline demand.</div><div class="err" id="e_demand_multiplier_pct"></div>
+                  </div>
+                  <div class="field">
+                    <label for="f_equity">Equity floor <span class="val-pill" id="pv_equity"></span></label>
+                    <div class="slider-row"><input type="range" id="f_equity_r" min="0" max="100" step="5" aria-label="Equity floor slider"><input type="number" id="f_equity" min="0" max="100" step="1"></div>
+                    <div class="hint">Every cluster must get at least this share within the threshold. Hard constraint.</div><div class="err" id="e_equity_min_pct"></div>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="lbl" id="policyLbl">Policy</div>
+                  <div class="policy-opts" role="radiogroup" aria-labelledby="policyLbl">
+                    <label class="policy-opt"><input type="radio" name="policy" value="coverage_first"><b>Coverage first</b><span>Reach the most visits within the threshold, then fairness, travel, cost.</span></label>
+                    <label class="policy-opt"><input type="radio" name="policy" value="equity_first"><b>Equity first</b><span>Lift the worst-served cluster first, then total coverage.</span></label>
+                    <label class="policy-opt"><input type="radio" name="policy" value="cost_efficient"><b>Cost efficient</b><span>Cheapest plan that meets a coverage target.</span></label>
+                  </div>
+                  <div class="err" id="e_policy"></div>
+                </div>
+                <div class="field" id="minCovField" hidden>
+                  <label for="f_mincov">Minimum coverage target <span class="val-pill" id="pv_mincov"></span></label>
+                  <div class="slider-row"><input type="range" id="f_mincov_r" min="0" max="100" step="5" aria-label="Coverage target slider"><input type="number" id="f_mincov" min="0" max="100" step="1"></div>
+                  <div class="err" id="e_min_coverage_pct"></div>
+                </div>
+                <details class="field">
+                  <summary class="small muted" style="cursor:pointer">Advanced</summary>
+                  <div class="mt-h"><label for="f_seed" class="small">Solver seed</label><input type="number" id="f_seed" min="0" max="2147483647" step="1" style="max-width:200px"><div class="err" id="e_seed"></div></div>
+                </details>
+                <div id="formErr" class="alert err" role="alert" hidden></div>
+                <button type="submit" class="sr-only">Review plan</button>
+              </form>
+            </div>
+          </div>
+          <div class="stack sticky">
+            <div class="card" id="summaryCard">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-hash"/></svg></div><div><h2>Plan summary</h2><p class="desc" id="summaryState">Not reviewed yet</p></div></div>
+              <div class="card-b" id="summaryBox"></div>
+              <div class="card-f" id="summaryActions"></div>
+            </div>
+            <div class="card">
+              <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-cpu"/></svg></div><div><h2>Runs</h2><p class="desc">1 solve at a time · polled every 1–5 s</p></div></div>
+              <div class="card-b" id="runStatus" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="view anim" id="view-results" aria-labelledby="pageTitle" hidden>
+        <div id="resultsBox"></div>
+      </section>
+
+      <!-- STRESS -->
+      <section class="view anim" id="view-stress" aria-labelledby="pageTitle" hidden>
+        <div class="grid g-side-main">
+          <div class="card sticky" style="align-self:start">
+            <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-sliders"/></svg></div><div><h2>Stress settings</h2><p class="desc">Fixed-seed sensitivity, not a forecast</p></div></div>
+            <div class="card-b">
+              <p class="small muted">Each plan keeps its chosen sites. Visits are re-assigned under up to 20 cases with demand ×80–130% and travel time ×90–140% (illustrative ranges).</p>
+              <div class="field" data-local-only><label for="s_seed">Stress seed</label><input type="number" id="s_seed" value="2026" min="0"></div>
+              <div class="field" data-local-only><label for="s_count">Number of cases <span class="val-pill" id="pv_count">20</span></label><input type="range" id="s_count_r" min="1" max="20" step="1" value="20" aria-label="Number of cases slider"><input type="hidden" id="s_count" value="20"></div>
+              <div class="field" data-local-only><label for="s_target">Coverage target for shortfall count (%)</label><input type="number" id="s_target" min="0" max="100" placeholder="optional, e.g. 70"></div>
+              <button class="btn primary block" id="stressBtn" data-local-only><svg class="icon sm"><use href="#i-play"/></svg>Run stress suite</button>
+              <div id="stressStatus" class="mt-h small" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="stack" id="stressBox"></div>
+        </div>
+      </section>
+
+      <!-- REPORT -->
+      <section class="view anim" id="view-report" aria-labelledby="pageTitle" hidden>
+        <div id="reportBox"></div>
+      </section>
+      <!-- ABOUT -->
+      <section class="view anim" id="view-about" aria-labelledby="pageTitle" hidden>
+        <div class="hero">
+          <div class="grid-lines" aria-hidden="true"></div>
+          <div class="eyebrow">Our approach</div>
+          <h2>Distance should not decide <em>who gets care</em></h2>
+          <p>In mountainous districts, a long journey can stand between a family and a health visit. CIVITWIN helps planners
+            see who is reached, who is left behind and what each rupee buys, so decisions about new services can be fairer
+            and easier to explain to the people they affect.</p>
+        </div>
+        <div class="card mt-1"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-heart"/></svg></div><div><h2>Our principles</h2><p class="desc">How we keep the tool useful, honest and humane</p></div></div>
+          <div class="card-b"><div class="principles">
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-users"/></svg></div><b>People decide</b><span>The model advises. A planner reviews every plan, confirms its exact hash and records their judgement before anything is shared.</span></div>
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-shield"/></svg></div><b>Every number is checked</b><span>An independent audit recomputes all constraints and metrics. No language model produces or changes a number.</span></div>
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-scale"/></svg></div><b>Fairness shown, not claimed</b><span>We show the worst-served cluster, unmet demand and who is still far away — instead of a single "fair" score.</span></div>
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-lock"/></svg></div><b>Privacy by design</b><span>Only aggregate, non-identifying planning data. No patient records, no individual tracking, runs fully offline.</span></div>
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-globe"/></svg></div><b>Local language</b><span>Ask in English or Urdu and read the explanation in Urdu. Pashto is planned, with review by fluent speakers.</span></div>
+            <div class="principle"><div class="ic"><svg class="icon"><use href="#i-flask"/></svg></div><b>Honest about the data</b><span>Today's demo is synthetic and labelled everywhere. Real use needs approved aggregate data and local validation.</span></div>
+          </div></div></div>
+        <div class="grid g-2 mt-1">
+          <div class="card"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-users"/></svg></div><div><h2>Who it is for</h2></div></div>
+            <div class="card-b"><ul class="small" style="margin:0;padding-left:1.1rem;color:var(--ink-2)">
+              <li style="margin-bottom:.35rem"><b>District health officers and planners</b> comparing options for new services.</li>
+              <li style="margin-bottom:.35rem"><b>NGOs and development partners</b> planning outreach, mobile clinics and health camps.</li>
+              <li style="margin-bottom:.35rem"><b>Community representatives</b>, who can see where services go and why, in plain language.</li>
+              <li><b>Lady Health Worker supervisors</b>, who know the roads, seasons and families behind the numbers.</li></ul></div></div>
+          <div class="card"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-compass"/></svg></div><div><h2>What it is — and is not</h2></div></div>
+            <div class="card-b isnt">
+              <div><div class="small" style="font-weight:650;margin-bottom:.35rem">It is</div><ul><li>A scenario sandbox for planning access</li><li>Transparent, reproducible maths</li><li>A way to compare options before field checks</li></ul></div>
+              <div><div class="small" style="font-weight:650;margin-bottom:.35rem">It is not</div><ul><li>Medical advice or emergency dispatch</li><li>An approved government allocation</li><li>A statement about real district services</li></ul></div>
+            </div></div>
+        </div>
+        <div class="card mt-1"><div class="card-h"><div class="ic"><svg class="icon"><use href="#i-route"/></svg></div><div><h2>From demo to a real pilot</h2><p class="desc">A conditional 90-day path — only with approval from the responsible authorities</p></div></div>
+          <div class="card-b"><div class="timeline">
+            <div><b>Days 1–30 · Listen and validate</b>Agree data sharing and governance; review aggregate demand, capacity and travel times with district staff and community voices.</div>
+            <div><b>Days 31–60 · Calibrate</b>Replace synthetic inputs with approved data; compare model plans with planners' own options; test Urdu and Pashto wording.</div>
+            <div><b>Days 61–90 · Supervised trials</b>Use in real planning discussions with people in charge; record feedback; decide together whether to expand to Mohmand and Khyber.</div>
+          </div></div></div>
+        <div class="grid g-main-side mt-1">
+          <div class="card">
+          <div class="card-h"><div class="ic"><svg class="icon"><use href="#i-info"/></svg></div><div><h2>How it works</h2><p class="desc">Four steps, and a person signs off at the end</p></div></div>
+          <div class="card-b how cols">
+            <div class="h"><div class="ic"><svg class="icon"><use href="#i-spark"/></svg></div><div><b>1 · Describe</b><span>Type the request in English or Urdu, or pick a quick scenario. The form fills itself for you to check.</span></div></div>
+            <div class="h"><div class="ic"><svg class="icon"><use href="#i-hash"/></svg></div><div><b>2 · Review &amp; confirm</b><span>See every value and confirm the plan's fingerprint. Nothing runs before that.</span></div></div>
+            <div class="h"><div class="ic"><svg class="icon"><use href="#i-cpu"/></svg></div><div><b>3 · Solve &amp; audit</b><span>Baseline, a simple benchmark and the optimized plan, then 12 independent checks.</span></div></div>
+            <div class="h"><div class="ic"><svg class="icon"><use href="#i-users"/></svg></div><div><b>4 · Decide together</b><span>Read who is reached and who is not, add your field notes, and share the report.</span></div></div>
+          </div>
+        </div>
+          <div class="team-note">
+            <h2>Why we built this</h2>
+            <p>Decisions about where to open a new health unit are usually made in meetings, with spreadsheets and good intentions.
+              We wanted something a district officer could open on an ordinary laptop, ask a question in their own language, and get
+              an answer they could explain to a village elder: which families get closer to care, which don't, and what it costs.</p>
+            <p>Everything here runs offline and every number is checked twice. The data today is made up — the questions are real.</p>
+            <div class="ur" lang="ur" dir="rtl">صحت سب کا حق ہے — فاصلہ نہیں فیصلہ کرے گا کہ کس کو علاج ملے۔</div>
+            <div class="sig">— Team CIVITWIN · KPITB AI Innovation Challenge, Peshawar</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="app-foot">CIVITWIN · made for the KPITB AI Innovation Challenge (Civics), Peshawar · <span id="footData">—</span> · <span lang="ur" style="font-family:'Noto Nastaliq Urdu',serif">صحت سب کے لیے</span></footer>
+  </div>
+</div>
+<div class="modal" id="tour" role="dialog" aria-modal="true" aria-labelledby="tourTitle" hidden>
+  <div class="modal-card">
+    <div class="modal-top"><div class="step-ic" id="tourIcon"></div><div class="ur" id="tourUr"></div><h2 id="tourTitle"></h2></div>
+    <div class="modal-body" id="tourText"></div>
+    <div class="modal-foot"><div class="dots" id="tourDots"></div>
+      <button class="btn ghost sm" id="tourSkip" type="button">Skip</button>
+      <button class="btn sm" id="tourBack" type="button">Back</button>
+      <button class="btn primary sm" id="tourNext" type="button">Next</button></div>
+  </div>
+</div>
+<div id="tooltip" role="tooltip"></div>
+<div id="toasts" aria-live="polite"></div>
+<script src="viz3d.js?v=21"></script>
+<script src="geomap.js?v=21"></script>
+<script src="app.js?v=22"></script>
+<script src="desk.js?v=22"></script>
+</body>
+</html>

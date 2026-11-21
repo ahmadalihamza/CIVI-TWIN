@@ -1,0 +1,18 @@
+.venv/
+.venv-win/
+dist/
+*.egg-info/
+node_modules/
+__pycache__/
+*.pyc
+.env
+runs/*
+!runs/.gitkeep
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+data/*.db
+data/civitwin*.db
+data/*.db-*
+# Local source data may include real facility locations.
+data/real/

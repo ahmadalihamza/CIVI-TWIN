@@ -121,3 +121,4 @@ Full list of what is and is not done: [docs/IMPLEMENTATION_STATUS.md](docs/IMPLE
 `make reset-demo` (asks you to type RESET, keeps a backup of `data/civitwin.db`).
 If the synthetic generator changes, reset is required because stored datasets are immutable.
 # CIVI-TWIN
+# Civi-Twin

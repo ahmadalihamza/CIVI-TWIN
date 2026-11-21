@@ -19,6 +19,8 @@ Verification on Windows 10, Intel Core i5-4310M (4 logical processors), 11.88 Gi
 | `node tests/e2e/browser.cjs local http://127.0.0.1:8001/` with `CIVITWIN_BROWSER_CHANNEL=msedge` | Scenario review, confirmation, audit, CSV and report reload passed (T14). |
 | `node tests/e2e/browser.cjs pages http://127.0.0.1:8002/pages/` with `CIVITWIN_BROWSER_CHANNEL=msedge` | Read-only navigation, audit, language and map controls, stress view, nine downloads and the 375 px report layout passed. The browser made zero API requests (T14, partial T16). |
 | `python benchmark.py --backend cpsat` with `PYTHONUTF8=1`, run from a temporary copy of `scripts/benchmark.py` | Median optimized solve 333 ms (max 405 ms), 20-case stress suite 3,466 ms, 100% audit pass rate on completed grid runs (T15, NFR-02). Historical reports are retained below. |
+| `gh run watch 44884765327 -R ahmadalihamza/CIVI-TWIN --exit-status` | Build and deployment succeeded. CI recorded 95 passed and 5 skipped (local real-data fixtures absent). Both CI browser checks passed. [GitHub Actions run](https://github.com/ahmadalihamza/CIVI-TWIN/actions/runs/44884765327) |
+| `node tests/e2e/browser.cjs pages https://ahmadalihamza.github.io/CIVI-TWIN/` with `CIVITWIN_BROWSER_CHANNEL=msedge` | Passed against the live HTTPS site. |
 
 Docker Compose, automated full accessibility review and broader SRS release gates remain open.
 
@@ -39,7 +41,7 @@ SciPy 1.17.1, FastAPI 0.143.3, Pydantic 2.14.1, NetworkX 3.4.2).
 | M3 Frontend | Done (MVP) | Offline HTML/CSS/JS dashboard served by FastAPI instead of Next.js (see deviations). All SRS screens covered. Redesigned 2026-11-21: app shell with sidebar navigation, progress stepper, hover tooltips on every chart, toasts, dumbbell chart per cluster, validated colour palette (dataviz validator: series blue/orange and the 5-step coverage scale pass). Second pass 2026-11-21: dark theme by default with a light toggle (both palettes validated), a dependency-free 3D canvas renderer (`apps/web/viz3d.js`: rotatable 3D coverage map with flow particles, 3D stress scenario cloud), isometric 3D coverage bars, count-up numbers, animated charts and page transitions. 3D is for overview; exact values stay in the 2D charts, tooltips and data tables. |
 | M4 Robustness | Mostly done | Stress suite, greedy benchmark, evidence templates (EN/UR), error/no-solution states, benchmark recorded and Playwright E2E. Full automated accessibility testing is open. |
 | M5 Optional AI | Partial | Offline rule-based EN/UR parser with injection tests. **No LLM adapter** (disabled by default; needs a provider decision and key). |
-| M6 Release | Partial | Fresh Windows setup, smoke and browser checks passed. GitHub Pages pipeline configured. Broader SRS release gates, screenshots and pitch are open. |
+| M6 Release | Partial | Fresh Windows setup, smoke and browser checks passed. GitHub Pages deployed and verified. Broader SRS release gates, screenshots and pitch are open. |
 
 ## Added 2026-11-21: decision support and human-centred features
 
